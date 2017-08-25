@@ -16,8 +16,8 @@ public class LoginPage extends AbstractPage {
 	@FindBy(how=How.ID, using="username")
 	WebElement uName;
 	
-	public LoginPage enterUserName(){
-		enterInput(uName, "DemoSalesManager");
+	public LoginPage enterUserName(String username){
+		enterInput(uName, username);
 		return this;
 	}
 
@@ -25,8 +25,8 @@ public class LoginPage extends AbstractPage {
 	@FindBy(how=How.ID, using="password")
 	WebElement password;
 	
-	public LoginPage enterPassword(){
-		enterInput(password, "crmsfa");
+	public LoginPage enterPassword(String pasword){
+		enterInput(password, pasword);
 		return this;
 	}
 	

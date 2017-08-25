@@ -11,6 +11,8 @@ public class TC001_CreateLead_PageFactory extends Sample_TestNg {
 	
 	@DataProvider
 	public Object[][] getData(){
+		
+		
 	
 		Object[][] data=new Object[0][8];
 		data[0][0]="DemoSalesManager";
@@ -27,21 +29,22 @@ public class TC001_CreateLead_PageFactory extends Sample_TestNg {
 	}
 	
 	@Test(dataProvider="getData")	
-		public void createLead(){		
+		public void createLead(String username, String pasword,String compyname, String fname,String lname,String marcampaign,String confvalue,String phnumber,
+				String email){		
 		
 		new LoginPage()
-		.enterUserName()
-		.enterPassword()
+		.enterUserName(username)
+		.enterPassword(pasword)
 		.clickLoginButton()
 		.clickCRMSFA()
 		.clickCreateLead()
-		.enterCompanyName()
-		.enterFirstName()
-		.enterLastName()
-		.selectMarketingCampaign()
-		.selectDataSource()
-		.enterPrimaryPhoneNumber()
-		.enterEmailAddress()
+		.enterCompanyName(compyname)
+		.enterFirstName(fname)
+		.enterLastName(lname)
+		.selectMarketingCampaign(marcampaign)
+		.selectDataSource(confvalue)
+		.enterPrimaryPhoneNumber(phnumber)
+		.enterEmailAddress(email)
 		.clickCreateLead()
 		.getLeadID();
 		
