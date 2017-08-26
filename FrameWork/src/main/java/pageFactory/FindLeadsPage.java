@@ -25,8 +25,8 @@ public class FindLeadsPage extends AbstractPage {
 	@FindBy(how=How.XPATH, using="//input[@name='phoneNumber']")
 	WebElement enterPhoneNumber;
 	
-	public FindLeadsPage enterPhoneNumber(){
-		enterInput(enterPhoneNumber, "65285206");
+	public FindLeadsPage enterPhoneNumber(String phnumber){
+		enterInput(enterPhoneNumber, phnumber);
 		return this;
 	}
 	
@@ -94,8 +94,8 @@ public class FindLeadsPage extends AbstractPage {
 	@FindBy(how=How.XPATH, using="(//input[@name='firstName'])[3]")
 	WebElement enterFirstName;
 	
-	public FindLeadsPage enterfnameFindLead(){
-		enterInput(enterFirstName, "Lakshmi");
+	public FindLeadsPage enterfnameFindLead(String finame){
+		enterInput(enterFirstName, finame);
 		return this;
 	}
 

@@ -80,7 +80,7 @@ public class ViewLead extends AbstractPage {
 		String lead=getText(newcompanyName);
 		String companyName2=lead.replaceAll("[0-9,( )]", "");
 		System.out.println(companyName2);
-		if(companyName1.equalsIgnoreCase(companyName2)){
+		if(ViewLead.companyName1.equalsIgnoreCase(companyName2)){
 			System.out.println("Update not successful");
 		}
 		

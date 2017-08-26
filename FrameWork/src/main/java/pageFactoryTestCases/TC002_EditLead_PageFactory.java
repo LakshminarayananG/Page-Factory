@@ -1,6 +1,6 @@
 package pageFactoryTestCases;
 
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pageFactory.LoginPage;
@@ -11,18 +11,13 @@ import testcases.Sample_TestNg;
 public class TC002_EditLead_PageFactory extends Sample_TestNg{
 
 	
-	@DataProvider
-	public Object[][] getData(){
-	
-		Object[][] data=new Object[0][8];
-		data[0][0]="DemoSalesManager";
-		data[0][1]="crmsfa";
-		
-	return data;
+	@BeforeClass
+	public void setSheetValue(){
+		dataSheetName="TC002_EditLead";
 	}
 	
 	@Test(dataProvider="getData")
-	public void editLead(String username, String pasword) throws InterruptedException {
+	public void editLead(String username, String pasword,String finame) throws InterruptedException {
 
 	
 		new LoginPage()
@@ -32,7 +27,7 @@ public class TC002_EditLead_PageFactory extends Sample_TestNg{
 		.clickCRMSFA()
 		.clickLeads()
 		.clickFindLeads()
-		.enterfnameFindLead()
+		.enterfnameFindLead(finame)
 		.clickFirstResultingLead()
 		.getCompanyName()
 		.clickEditLead()
